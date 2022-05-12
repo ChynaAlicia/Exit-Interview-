@@ -1,0 +1,36 @@
+#This is the Guess the Number Program.
+import random
+
+guessesTaken=0
+
+print('...And heres your host...Alex...TREBEK!!')
+print('What is your name, Player One?')
+myName=input()
+
+number=random.randint(1,20)
+print('Alex: Good evening, '+myName+', I am thinking of a number between 1 and 20.')
+
+for guessesTaken in range(6):
+    print('Think you can guess what it is?')#Four spaces in front of "print"
+    guess=input()
+    guess=int(guess)
+
+    if guess < number:
+        print('Your guess is too low. Try again!')#Eight spaces in front of "print"
+
+    if guess > number:
+        print('Your guess is too high. Try again!')
+
+    if guess == number:
+        break
+
+if guess == number:
+    guessesTaken=str(guessesTaken + 1)
+    print('Good job, '+ myName +'! You guessed my number in '+ guessesTaken +
+          ' guesses!')
+
+if guess != number:
+    number = str(number)
+    print('Im very sorry, that is incorrect. The number I was thinking of was '+
+          number +'.')
+    
